@@ -1,0 +1,1 @@
+# VideoGameServicePactTest-with-Maven-Springboot
