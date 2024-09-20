@@ -1,0 +1,284 @@
+{
+  "consumer": {
+    "name": "VideoGamesCatalogue"
+  },
+  "interactions": [
+    {
+      "description": "get video game with ID 10",
+      "providerStates": [
+        {
+          "name": "video game with ID 10 exists",
+          "params": {
+            "id": 10
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/api/v2/videogame/10"
+      },
+      "response": {
+        "body": {
+          "category": "Driving",
+          "id": 10,
+          "name": "Grand Theft Auto III",
+          "rating": "Mature",
+          "releaseDate": "2001-04-23 23:59:59",
+          "reviewScore": 90
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$.category": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.rating": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.releaseDate": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.reviewScore": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "get all video games",
+      "providerStates": [
+        {
+          "name": "video games exists"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/api/v2/videogame"
+      },
+      "response": {
+        "body": {
+          "videogames": [
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            },
+            {
+              "category": "Shooter",
+              "id": 1,
+              "name": "Resident Evil 4",
+              "rating": "Universal",
+              "releaseDate": "2005-10-01 23:59:59",
+              "reviewScore": 85
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "matchingRules": {
+          "body": {
+            "$.videogames": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 1
+                }
+              ]
+            },
+            "$.videogames[*].category": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.videogames[*].id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            },
+            "$.videogames[*].name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.videogames[*].rating": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.videogames[*].releaseDate": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.videogames[*].reviewScore": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset=[\\w\\-]+)?"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.6.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "VideoGameService"
+  }
+}
